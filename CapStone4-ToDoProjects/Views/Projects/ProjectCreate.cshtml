@@ -1,0 +1,24 @@
+﻿
+<h2>Add a new Project to the Database</h2>
+@{ 
+    int tempUserId = (int)TempData["TempUserId"];
+}
+
+<form method="post">
+    <input type="hidden" name="UserId" value="@tempUserId" />
+    <br />
+
+    <input type="text" name="ProjectDesc" placeholder="Enter Project Description" required />
+    <label>Project Description</label>
+    <br />
+    <input type="date" name="DueDate" placeholder="Enter Due Date" required />
+    <label>Due Date</label>
+    <br />
+    <input type="hidden" name="IsComplete" value="false" /> 
+
+    <br />
+    <br />
+
+    <input class="button2" type="submit" />
+
+</form>

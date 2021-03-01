@@ -1,0 +1,16 @@
+﻿<h2>User Registration for the Database</h2>
+
+<!--<form asp-controller="Home" asp-action="UserSummary">-->
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post">
+    <p>User Name </p>
+    <input type="text" name="UserName" required/>
+    <br />
+
+    <p>Password</p>
+    <input type="password" name="UserPassword" required />
+
+    <br />
+    <br />
+    <input type="submit" />
+</form>

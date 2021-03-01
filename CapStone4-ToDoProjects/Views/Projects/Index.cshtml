@@ -1,0 +1,35 @@
+﻿@model List<Project>
+
+<h4>Listing All Projects for @TempData["TempUser"] </h4>
+@{ 
+    int tempUserId = (int)TempData["TempUserId"];
+}
+
+@foreach (Project p in Model)
+{
+    <h3>Id: @p.Id...Description: @p.ProjectDesc</h3>
+    <h3>Due Date: @p.DueDate Complete?@p.IsComplete</h3>
+
+    <a asp-action="ProjectDelete" asp-controller="Projects" asp-route-id="@p.Id">
+        <button>Delete @p.ProjectDesc </button>
+    </a>
+
+    <a asp-action="ProjectUpdate" asp-controller="Projects" asp-route-id="@p.Id">
+        <button>Edit @p.ProjectDesc </button>
+    </a>
+}
+
+<br />
+@*<h5>Add a Project to the database</h5>
+    <form asp-action="ProjectCreate" asp-controller="Projects" >
+
+        <br />
+        <input type="submit" name="Add a Project" />
+    </form>
+@{ 
+    int tempId = (int)TempData["TempUserId"];
+}*@
+
+<a asp-action="ProjectCreate" asp-controller="Projects" asp-route-id="@tempUserId">
+    <button>Add a Project</button>
+</a>

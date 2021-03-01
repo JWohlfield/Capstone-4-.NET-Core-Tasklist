@@ -1,0 +1,11 @@
+﻿@model User
+
+<h4>Welcome @Model.UserName</h4>
+<br />
+<a asp-action="Index" asp-controller="Projects" asp-route-id="@Model.Id">
+    <button>View all Projects</button>
+</a>
+
+<a asp-action="ProjectCreate" asp-controller="Projects" asp-route-id="@Model.Id">
+    <button>Add a Project</button>
+</a>
